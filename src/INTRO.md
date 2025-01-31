@@ -50,19 +50,19 @@ graph TD;
     D --> E[Database (PostgreSQL)];
     E --> F[Automated Actions];
 
-    C -- Receives alerts --> C;
-    C -- Predicts severity --> C;
-    C -- Stores in DB --> C;
+    C -- Receives alerts --> D;
+    C -- Predicts severity --> D;
+    C -- Stores in DB --> E;
 
-    D -- Classifies messages --> D;
-    D -- Predicts severity --> D;
+    D -- Classifies messages --> E;
+    D -- Predicts severity --> E;
 
-    E -- Stores alerts --> E;
-    E -- Fetches history --> E;
+    E -- Stores alerts --> F;
+    E -- Fetches history --> F;
 
-    F -- Restart services --> F;
-    F -- Notify engineers --> F;
-    F -- Log for reference --> F;
+    F -- Restart services --> A;
+    F -- Notify engineers --> A;
+    F -- Log for reference --> A;
 ```
 
 3. Scale and Complexity of the Solution
