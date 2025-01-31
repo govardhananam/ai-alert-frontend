@@ -44,11 +44,11 @@ System Architecture Diagram
 
 ```mermaid
 graph TD;
-    A[User (Frontend)] --> B[React Frontend UI];
-    B --> C[FastAPI Backend (Python)];
-    C --> D[AI Model (NLP)];
-    D --> E[Database (PostgreSQL)];
-    E --> F[Automated Actions];
+    A(User Frontend) --> B(React Frontend UI);
+    B --> C(FastAPI Backend - Python);
+    C --> D(AI Model - NLP);
+    D --> E(Database - PostgreSQL);
+    E --> F(Automated Actions);
 
     C -- Receives alerts --> D;
     C -- Predicts severity --> D;
