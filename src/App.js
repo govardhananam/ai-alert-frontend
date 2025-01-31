@@ -25,9 +25,7 @@ function App() {
         if (!message) return alert("Please enter an alert message!");
 
         try {
-            const response = await axios.get(`${API_URL}/receive_alert/`, {
-                params: { message }
-            });
+            const response = await axios.post(`${API_URL}/receive_alert/`, { message });
             alert(`AI Response: ${response.data.action_taken}`);
             setMessage(""); // Clear input
             fetchAlerts();  // Refresh the alert list
