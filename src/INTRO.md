@@ -41,23 +41,29 @@ System Components
 
 System Architecture Diagram
 
+
 ```mermaid
 graph TD;
     A[User (Frontend)] --> B[React Frontend UI];
     B --> C[FastAPI Backend (Python)];
-    C -->|Receives alerts| C;
-    C -->|Predicts severity| C;
-    C -->|Stores in DB| C;
     C --> D[AI Model (NLP)];
-    D -->|Classifies messages| D;
-    D -->|Predicts severity| D;
     D --> E[Database (PostgreSQL)];
-    E -->|Stores alerts| E;
-    E -->|Fetches history| E;
     E --> F[Automated Actions];
-    F -->|Restart services| F;
-    F -->|Notify engineers| F;
-    F -->|Log for reference| F;
+
+    C -- Receives alerts --> C;
+    C -- Predicts severity --> C;
+    C -- Stores in DB --> C;
+
+    D -- Classifies messages --> D;
+    D -- Predicts severity --> D;
+
+    E -- Stores alerts --> E;
+    E -- Fetches history --> E;
+
+    F -- Restart services --> F;
+    F -- Notify engineers --> F;
+    F -- Log for reference --> F;
+```
 
 3. Scale and Complexity of the Solution
 
