@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./App.css";
 
-const API_URL = "https://your-backend-url.onrender.com"; // Change to your FastAPI URL
+const API_URL = "https://ai-agent-backend-ttt3.onrender.com"; // Change to your FastAPI URL
 
 function App() {
     const [message, setMessage] = useState("");
