@@ -40,44 +40,25 @@ System Components
 	•	Info Alerts → Log the event for future reference.
 
 System Architecture Diagram
-+–––––––––––––+
-|  User (Frontend)         |
-+–––––––––––––+
-│
-▼
-+–––––––––––––+
-|  React Frontend UI       |
-+–––––––––––––+
-│
-▼
-+–––––––––––––+
-|  FastAPI Backend (Python)|
-|  - Receives alerts       |
-|  - Predicts severity     |
-|  - Stores in DB          |
-+–––––––––––––+
-│
-▼
-+–––––––––––––+
-|  AI Model (NLP)          |
-|  - Classifies messages   |
-|  - Predicts severity     |
-+–––––––––––––+
-│
-▼
-+–––––––––––––+
-|  Database (PostgreSQL)   |
-|  - Stores alerts         |
-|  - Fetches history       |
-+–––––––––––––+
-│
-▼
-+–––––––––––––+
-|  Automated Actions       |
-|  - Restart services      |
-|  - Notify engineers      |
-|  - Log for reference     |
-+–––––––––––––+
+
+```mermaid
+graph TD;
+    A[User (Frontend)] --> B[React Frontend UI];
+    B --> C[FastAPI Backend (Python)];
+    C -->|Receives alerts| C;
+    C -->|Predicts severity| C;
+    C -->|Stores in DB| C;
+    C --> D[AI Model (NLP)];
+    D -->|Classifies messages| D;
+    D -->|Predicts severity| D;
+    D --> E[Database (PostgreSQL)];
+    E -->|Stores alerts| E;
+    E -->|Fetches history| E;
+    E --> F[Automated Actions];
+    F -->|Restart services| F;
+    F -->|Notify engineers| F;
+    F -->|Log for reference| F;
+
 3. Scale and Complexity of the Solution
 
 Scalability
