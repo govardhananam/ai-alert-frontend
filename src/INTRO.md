@@ -82,8 +82,8 @@ Complexity
 
 Live Demo
 
-➡ Frontend (React): [Hosted on Vercel / Netlify]
-➡ Backend (FastAPI): [Hosted on Render / AWS Lambda]
+➡ Frontend (React): [Hosted on Vercel]
+➡ Backend (FastAPI): [Hosted on Render]
 ➡ Database: PostgreSQL (Cloud-based) - currently using sqlite
 
 How to Deploy Locally
@@ -92,7 +92,7 @@ Step 1: Clone the Repository
 
 git clone https://github.com/govardhananam/ai-agent-backend.git -> backend
 
-git clone https://github.com/govardhananam/ai-alert-frontend.git -> backend
+git clone https://github.com/govardhananam/ai-alert-frontend.git -> frontend
 
 Step 2: Start Backend (FastAPI)
 
