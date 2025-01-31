@@ -23,8 +23,11 @@ function App() {
 
     const submitAlert = async () => {
         if (!message) return alert("Please enter an alert message!");
+
         try {
-            const response = await axios.post(`${API_URL}/receive_alert/`, { message });
+            const response = await axios.get(`${API_URL}/receive_alert/`, {
+                params: { message }
+            });
             alert(`AI Response: ${response.data.action_taken}`);
             setMessage(""); // Clear input
             fetchAlerts();  // Refresh the alert list
@@ -62,11 +65,11 @@ function App() {
                         <tr><td colSpan="4">No alerts submitted yet.</td></tr>
                     ) : (
                         alerts.map((alert) => (
-                            <tr key={alert[0]}>
-                                <td>{alert[0]}</td>
-                                <td>{alert[1]}</td>
-                                <td className={`severity ${alert[2].toLowerCase()}`}>{alert[2]}</td>
-                                <td>{alert[3]}</td>
+                            <tr key={alert.id}>
+                                <td>{alert.id}</td>
+                                <td>{alert.message}</td>
+                                <td className={`severity ${alert.severity.toLowerCase()}`}>{alert.severity}</td>
+                                <td>{alert.status}</td>
                             </tr>
                         ))
                     )}
